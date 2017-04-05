@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="RistrettoJavaAdaptor">
+              as the first entry and export the buildfile again. --><project basedir="." default="build-jar" name="RistrettoJavaAdaptor">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
@@ -44,6 +44,9 @@
             <arg line="/Users/haiyang/Documents/WorkSpace/Github/ristretto/examples/fact.r --print-source --print-drip --print-perc"/>
             <classpath refid="RistrettoJavaAdaptor.classpath"/>
         </java>
+    </target>
+    <target name="build-jar" depends="build">
+        <jar destfile="java-adaptor.jar" basedir="bin" />
     </target>
     <target name="run-compiler" depends="build">
         <java classname="ristretto.main.Compiler" fork="true">
