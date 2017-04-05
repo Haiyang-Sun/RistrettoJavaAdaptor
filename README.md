@@ -6,5 +6,5 @@ ant; #compile the project and generate the library "java-adaptor.jar" in the cur
 ~~~
 
 ~~~
-ant run-compiler; # will run examples/fact.r with "--print-drip" option
+ant run-compiler; #will run examples/fact.r with "--print-drip" option
 ~~~
